@@ -29,9 +29,15 @@ def bubble_sort(arr):
     return sorted_arr
 
 def quick_sort(arr):
-    sorted_arr = []
-    # TODO: Sort arr using quick sort
-    return sorted_arr
+    #sorted_arr = [] -> não sei se preciso disto
+    if len(arr) <= 1:
+        return arr
+    else:
+        pivot = arr[0]
+        left = [x for x in arr[1:] if x < pivot]
+        right = [x for x in arr[1:] if x >= pivot]
+        return quick_sort(left) + [pivot] + quick_sort(right)
+    #return sorted_arr  -> não sei se preciso disto
 
 
 #### DO NOT CHANGE CODE BELOW THIS LINE ####
