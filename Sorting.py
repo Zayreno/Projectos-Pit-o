@@ -1,7 +1,7 @@
 import time
 import random
 
-ARRAY_SIZE = 1000 # can be changed to something smaller for testing,... (like 10)
+ARRAY_SIZE = 5 # can be changed to something smaller for testing,... (like 10)
 
 # Complete the two functions below that sorts the array of integers
 # using bubble sort and quick sort algorithms respectively
@@ -20,7 +20,12 @@ ARRAY_SIZE = 1000 # can be changed to something smaller for testing,... (like 10
 
 def bubble_sort(arr):
     sorted_arr = arr.copy()
-    # TODO: Sort arr using bubble sort
+    n = len(sorted_arr)
+    for i in range(n - 1):
+        for j in range(0, n - i - 1):
+            if sorted_arr[j] > sorted_arr[j + 1]:
+                sorted_arr[j], sorted_arr[j + 1] = sorted_arr[j + 1], sorted_arr[j]
+                
     return sorted_arr
 
 def quick_sort(arr):
